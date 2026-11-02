@@ -1,0 +1,704 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prateek & Deepika | Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d5ad65;
+    --dark-gold: #a77c38;
+    --maroon: #601c2b;
+    --cream: #fff8ed;
+}
+
+body {
+    background: #fff8ed;
+    color: #54202a;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* OPENING SCREEN */
+
+#opening {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background:
+      radial-gradient(circle, #852c3d, #3c101e);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 1s ease;
+}
+
+.opening-title {
+    font-family: 'Cormorant Garamond', serif;
+    color: #f8dfad;
+    font-size: 25px;
+    letter-spacing: 5px;
+    margin-bottom: 35px;
+}
+
+.heart {
+    font-size: 100px;
+    cursor: pointer;
+    animation: heartbeat 1.3s infinite;
+    filter: drop-shadow(0 0 25px #ffb4b4);
+    user-select: none;
+}
+
+.tap-text {
+    color: #f6dfba;
+    margin-top: 35px;
+    letter-spacing: 3px;
+    font-size: 12px;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.18); }
+}
+
+@keyframes blink {
+    50% { opacity: .4; }
+}
+
+#opening.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* MAIN WEBSITE */
+
+#invitation {
+    display: none;
+    animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero {
+    min-height: 100vh;
+    background:
+      linear-gradient(rgba(48, 10, 20, .72), rgba(48, 10, 20, .8)),
+      url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=85');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 45px 20px;
+    color: white;
+}
+
+.hero-content {
+    max-width: 850px;
+    border: 1px solid rgba(225,190,125,.8);
+    padding: 55px 30px;
+    outline: 1px solid rgba(225,190,125,.35);
+    outline-offset: 9px;
+}
+
+.small-heading {
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: #edcf91;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(55px, 10vw, 100px);
+    font-weight: 400;
+    color: #f5d79d;
+    margin: 25px 0;
+}
+
+.amp {
+    font-family: 'Cormorant Garamond', serif;
+    color: white;
+    font-size: 45px;
+}
+
+.hero-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    letter-spacing: 4px;
+    margin-top: 25px;
+}
+
+.hero-location {
+    margin-top: 15px;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 85px 20px;
+    text-align: center;
+}
+
+.section-heading {
+    font-family: 'Great Vibes', cursive;
+    font-size: 55px;
+    color: var(--maroon);
+    margin-bottom: 15px;
+}
+
+.gold-line {
+    width: 85px;
+    height: 2px;
+    background: var(--gold);
+    margin: 20px auto 30px;
+}
+
+.subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    line-height: 1.7;
+    max-width: 720px;
+    margin: auto;
+    color: #75515a;
+}
+
+/* FAMILY */
+
+.families {
+    background: #f7ecdf;
+}
+
+.family-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    margin-top: 35px;
+}
+
+.family {
+    min-width: 230px;
+}
+
+.family h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 31px;
+    color: var(--dark-gold);
+}
+
+.family p {
+    margin-top: 10px;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+/* COUNTDOWN */
+
+.countdown-section {
+    background: var(--maroon);
+    color: white;
+}
+
+.countdown-section .section-heading {
+    color: #f3d59f;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.time-box {
+    border: 1px solid #caa35f;
+    padding: 22px 15px;
+    min-width: 90px;
+    background: rgba(255,255,255,.04);
+}
+
+.time-box span {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    color: #f2d39a;
+}
+
+.time-box small {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* EVENTS */
+
+.events {
+    background: var(--cream);
+}
+
+.event-container {
+    max-width: 750px;
+    margin: 40px auto 0;
+}
+
+.event {
+    padding: 28px 20px;
+    border-bottom: 1px solid #e6d3b2;
+}
+
+.event-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.event h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    color: var(--maroon);
+}
+
+.event-date {
+    color: var(--dark-gold);
+    margin-top: 8px;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.event-time {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* WEDDING CEREMONY */
+
+.wedding {
+    background:
+      linear-gradient(rgba(68,15,28,.85), rgba(68,15,28,.9)),
+      url('https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1600&q=85');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.wedding .section-heading {
+    color: #f4d8a5;
+}
+
+.wedding .subtitle {
+    color: #f5e6d2;
+}
+
+/* LOCATION */
+
+.location {
+    background: #f7ecdf;
+}
+
+.location h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    margin: 20px 0 10px;
+}
+
+.map-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 30px;
+    border: 1px solid var(--dark-gold);
+    background: var(--maroon);
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 12px;
+    transition: .3s;
+}
+
+.map-button:hover {
+    background: var(--dark-gold);
+}
+
+/* FOOTER */
+
+footer {
+    background: #42121e;
+    color: #f3d59f;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+footer h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 58px;
+    font-weight: 400;
+}
+
+footer p {
+    margin-top: 15px;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+@media(max-width:600px) {
+    .hero-content {
+        padding: 45px 15px;
+    }
+
+    .hero-date {
+        font-size: 19px;
+    }
+
+    .section-heading {
+        font-size: 44px;
+    }
+
+    .time-box {
+        min-width: 75px;
+        padding: 15px 8px;
+    }
+
+    .time-box span {
+        font-size: 32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING HEART -->
+
+<div id="opening">
+    <div class="opening-title">YOU ARE CORDIALLY INVITED</div>
+
+    <div class="heart" onclick="openInvitation()">❤️</div>
+
+    <div class="tap-text">TAP THE HEART TO OPEN</div>
+</div>
+
+<!-- INVITATION -->
+
+<div id="invitation">
+
+<!-- HERO -->
+
+<div class="hero">
+    <div class="hero-content">
+
+        <div class="small-heading">
+            Together With Their Families
+        </div>
+
+        <h1>
+            Prateek
+            <div class="amp">&</div>
+            Deepika
+        </h1>
+
+        <div class="gold-line"></div>
+
+        <div class="hero-date">
+            13 & 14 FEBRUARY 2027
+        </div>
+
+        <div class="hero-location">
+            SINCLAIRS RETREAT RESORT · UDAIPUR
+        </div>
+
+    </div>
+</div>
+
+<!-- INVITATION MESSAGE -->
+
+<section>
+    <div class="section-heading">A Celebration of Love</div>
+    <div class="gold-line"></div>
+
+    <p class="subtitle">
+        With the blessings of the Almighty and the love
+        of our families, we joyfully invite you to celebrate
+        the beautiful beginning of a new journey.
+        <br><br>
+        Join us as two hearts become one and two families
+        come together in a celebration of love, laughter
+        and togetherness.
+    </p>
+</section>
+
+<!-- FAMILIES -->
+
+<section class="families">
+
+    <div class="section-heading">With Love & Blessings</div>
+    <div class="gold-line"></div>
+
+    <div class="family-container">
+
+        <div class="family">
+            <h3>Kharbanda Family</h3>
+            <p>GROOM'S FAMILY</p>
+        </div>
+
+        <div class="family">
+            <h3>Paraswani Family</h3>
+            <p>BRIDE'S FAMILY</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- COUNTDOWN -->
+
+<section class="countdown-section">
+
+    <div class="section-heading">The Big Day</div>
+
+    <p style="letter-spacing:3px;font-size:11px;">
+        COUNTDOWN TO THE WEDDING CEREMONY
+    </p>
+
+    <div class="countdown">
+
+        <div class="time-box">
+            <span id="days">00</span>
+            <small>DAYS</small>
+        </div>
+
+        <div class="time-box">
+            <span id="hours">00</span>
+            <small>HOURS</small>
+        </div>
+
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <small>MINUTES</small>
+        </div>
+
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <small>SECONDS</small>
+        </div>
+
+    </div>
+
+    <p style="margin-top:30px;font-size:12px;color:#e7cda7;">
+        14 FEBRUARY 2027 · 12:00 NOON
+    </p>
+
+</section>
+
+<!-- EVENTS -->
+
+<section class="events">
+
+    <div class="section-heading">Wedding Celebrations</div>
+    <div class="gold-line"></div>
+
+    <div class="event-container">
+
+        <div class="event">
+            <div class="event-icon">🌼</div>
+            <h3>Mehndi & Haldi</h3>
+            <div class="event-date">13 FEBRUARY 2027</div>
+            <div class="event-time">2:00 PM</div>
+        </div>
+
+        <div class="event">
+            <div class="event-icon">✨</div>
+            <h3>Sangeet & Sagan</h3>
+            <div class="event-date">13 FEBRUARY 2027</div>
+            <div class="event-time">7:00 PM</div>
+        </div>
+
+        <div class="event">
+            <div class="event-icon">🙏</div>
+            <h3>The Wedding Ceremony</h3>
+            <div class="event-date">14 FEBRUARY 2027</div>
+            <div class="event-time">12:00 NOON</div>
+            <p style="margin-top:15px;font-family:'Cormorant Garamond',serif;font-size:21px;">
+                Laava in the presence of Guru Granth Sahib Ji
+            </p>
+        </div>
+
+        <div class="event">
+            <div class="event-icon">🥂</div>
+            <h3>Reception</h3>
+            <div class="event-date">14 FEBRUARY 2027</div>
+            <div class="event-time">8:00 PM</div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CHECK IN -->
+
+<section>
+    <div class="section-heading">Your Stay Awaits</div>
+    <div class="gold-line"></div>
+
+    <p class="subtitle">
+        We look forward to welcoming you to our
+        wedding celebrations in the beautiful city of Udaipur.
+        <br><br>
+        <strong>Check-in: 13 February 2027</strong>
+        <br>
+        Around 10:00 AM – 12:00 PM
+    </p>
+</section>
+
+<!-- LOCATION -->
+
+<section class="location">
+
+    <div class="section-heading">The Wedding Destination</div>
+    <div class="gold-line"></div>
+
+    <div style="font-size:45px;">📍</div>
+
+    <h3>Sinclairs Retreat Resort</h3>
+
+    <p class="subtitle">
+        Udaipur, Rajasthan, India
+    </p>
+
+    <a
+      class="map-button"
+      href="https://www.google.com/maps/place/Sinclairs+Palace+Retreat+Udaipur/@24.8472766,73.3687716,38175m/data=!3m1!1e3!4m13!1m2!2m1!1ssinclairs+retreat+resort+udaipur!3m9!1s0x39680f317d819f2f:0x962a238edfa1c657!5m2!4m1!1i2!8m2!3d24.8472766!4d73.6571627!15sCiBzaW5jbGFpcnMgcmV0cmVhdCByZXNvcnQgdWRhaXB1ciIDiAEBWiIiIHNpbmNsYWlycyByZXRyZWF0IHJlc29ydCB1ZGFpcHVykgEFaG90ZWyaAURDaTlEUVVsUlFVTnZaRU5vZEhsalJqbHZUMnhrVlZWWVVsZE5WM2hOVjJ4S2VHRXpTWGhWTWxKT1dsWldOVTVHUlJBQuABAPoBBAgAEEY!16s%2Fg%2F11x34j8z54?entry=ttu"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      OPEN LOCATION IN MAPS ↗
+
+    </a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>With Love,</h2>
+
+    <h2>Prateek & Deepika</h2>
+
+    <p>
+        THE KHARBANDA & PARASWANI FAMILIES
+    </p>
+
+    <div style="font-size:30px;margin-top:25px;">♥</div>
+
+    <p>
+        13 – 14 FEBRUARY 2027
+    </p>
+
+</footer>
+
+</div>
+
+<script>
+
+// OPEN INVITATION
+
+function openInvitation() {
+
+    const opening = document.getElementById('opening');
+
+    opening.classList.add('hide');
+
+    setTimeout(() => {
+        opening.style.display = 'none';
+
+        document.getElementById('invitation').style.display = 'block';
+
+        window.scrollTo(0, 0);
+
+    }, 1000);
+
+}
+
+// WEDDING COUNTDOWN
+// Indian Standard Time (UTC +5:30)
+
+const weddingDate = new Date(
+    "2027-02-14T12:00:00+05:30"
+).getTime();
+
+function updateCountdown() {
+
+    const now = new Date().getTime();
+
+    const difference = weddingDate - now;
+
+    if (difference <= 0) {
+
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+
+        return;
+    }
+
+    const days = Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+        (difference % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+    );
+
+    const minutes = Math.floor(
+        (difference % (1000 * 60 * 60)) /
+        (1000 * 60)
+    );
+
+    const seconds = Math.floor(
+        (difference % (1000 * 60)) / 1000
+    );
+
+    document.getElementById("days").innerText =
+        String(days).padStart(2, '0');
+
+    document.getElementById("hours").innerText =
+        String(hours).padStart(2, '0');
+
+    document.getElementById("minutes").innerText =
+        String(minutes).padStart(2, '0');
+
+    document.getElementById("seconds").innerText =
+        String(seconds).padStart(2, '0');
+}
+
+updateCountdown();
+
+setInterval(updateCountdown, 1000);
+
+</script>
+
+</body>
+</html>
